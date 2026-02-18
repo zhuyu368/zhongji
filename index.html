@@ -491,31 +491,6 @@ body {
   font-size: 1.1rem;
 }
 
-/* 新增：夜间模式切换按钮样式 */
-.theme-toggle {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: var(--accent);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(138, 127, 141, 0.3);
-  flex-shrink: 0;
-}
-
-.theme-toggle:hover {
-  background: var(--accent-light);
-  transform: rotate(30deg);
-}
-
-.theme-toggle i {
-  color: white;
-  font-size: 1.1rem;
-}
-
 /* 聊天区域 */
 .chat-section {
   width: 100%;
@@ -1972,16 +1947,6 @@ body {
   .preset-buttons {
     grid-template-columns: repeat(2, 1fr);
   }
-  
-  /* 移动端夜间模式按钮适配 */
-  .theme-toggle {
-    width: 32px;
-    height: 32px;
-  }
-  
-  .theme-toggle i {
-    font-size: 1rem;
-  }
 }
 
 
@@ -2798,211 +2763,6 @@ input:checked + .slider:before {
     font-size: 0.9rem;
   }
 }
-
-/* ===== 夜间模式样式 - 完全黑色背景 ===== */
-.night-mode {
-  /* 主要背景 - 深色 */
-  --bg-main: #0a0a0a !important;
-  --bg-panel: rgba(0, 0, 0, 0.95) !important;
-  
-  /* 消息气泡 - 更深的灰色 */
-  --msg-self: #1a1a1a !important;
-  --msg-other: #222222 !important;
-  
-  /* 文字颜色 - 浅灰色/白色 */
-  --text: #e0e0e0 !important;
-  
-  /* 强调色 - 稍微调亮 */
-  --accent: #b3a6b5 !important;
-  --accent-light: #c4b7c7 !important;
-  
-  /* 灰色按钮 - 更深 */
-  --accent-gray: #333333 !important;
-  --accent-gray-light: #555555 !important;
-  
-  /* 状态颜色 - 调暗但保持可辨识 */
-  --online: #1b5e20 !important;
-  --busy: #b26a00 !important;
-  --dr: #0d47a1 !important;
-  --cr: #4a148c !important;
-  --nearby: #b53d1a !important;
-  
-  /* 引用和特殊背景 - 半透明深色 */
-  --quote-bg: rgba(180, 170, 190, 0.15) !important;
-  --call-bg: rgba(33, 150, 243, 0.2) !important;
-  --call-text: #90caf9 !important;
-  --video-bg: rgba(156, 39, 176, 0.2) !important;
-  --video-text: #ce93d8 !important;
-  --tarot-bg: rgba(156, 39, 176, 0.2) !important;
-  --tarot-text: #ce93d8 !important;
-}
-
-/* 夜间模式下的全局背景 - 确保完全覆盖 */
-.night-mode,
-.night-mode body,
-.night-mode html {
-  background: #0a0a0a !important;
-  background-image: none !important;
-  background-color: #0a0a0a !important;
-}
-
-/* 夜间模式下背景容器完全黑色覆盖 */
-.night-mode .background-container {
-  background: #0a0a0a !important;
-  background-image: none !important;
-  opacity: 1 !important;
-}
-
-/* 如果有背景图片，在夜间模式下也变暗处理 */
-.night-mode .background-container[style*="background-image"] {
-  filter: brightness(0.15) contrast(1.2) !important;
-}
-
-/* 夜间模式下的所有输入框 */
-.night-mode .message-input,
-.night-mode .appearance-input,
-.night-mode .date-input,
-.night-mode .phrases-textarea,
-.night-mode .tarot-textarea,
-.night-mode .max-count-select,
-.night-mode .auto-send-select,
-.night-mode .cloud-textarea {
-  background: rgba(30, 30, 30, 0.9) !important;
-  color: #e0e0e0 !important;
-  border-color: #333 !important;
-}
-
-/* 夜间模式下的标题文字 */
-.night-mode .chat-title-area h1 {
-  color: #d0d0d0 !important;
-}
-
-/* 夜间模式下的副标题和恋爱天数气泡 */
-.night-mode .chat-subtitle,
-.night-mode .love-days {
-  color: #e0b5b5 !important;
-  background: rgba(40, 20, 25, 0.7) !important;
-  border-color: rgba(100, 60, 70, 0.5) !important;
-}
-
-/* 夜间模式下的昵称气泡 */
-.night-mode .nickname {
-  color: #e0b5b5 !important;
-  background: rgba(40, 20, 25, 0.7) !important;
-  border-color: rgba(100, 60, 70, 0.5) !important;
-}
-
-/* 夜间模式下的设置面板 */
-.night-mode .settings-panel {
-  background: rgba(0, 0, 0, 0.98) !important;
-  backdrop-filter: blur(12px) !important;
-  border-left: 1px solid #222 !important;
-}
-
-/* 夜间模式下的标签页按钮 */
-.night-mode .tab-button {
-  color: #aaa !important;
-}
-
-.night-mode .tab-button.active {
-  color: #c0b0c0 !important;
-  border-bottom-color: #b3a6b5 !important;
-}
-
-/* 夜间模式下的所有设置区域背景 */
-.night-mode .ratio-controls,
-.night-mode .appearance-controls,
-.night-mode .communication-controls,
-.night-mode .background-controls,
-.night-mode .tarot-controls,
-.night-mode .export-controls,
-.night-mode .cloud-controls,
-.night-mode .sticker-preview,
-.night-mode .music-list,
-.night-mode .active-call-controls,
-.night-mode .communication-stats,
-.night-mode .music-upload-area {
-  background: rgba(20, 20, 20, 0.9) !important;
-  border: 1px solid #222 !important;
-}
-
-/* 夜间模式下的音乐播放器 */
-.night-mode .music-window,
-.night-mode .call-window,
-.night-mode .video-window {
-  background: rgba(0, 0, 0, 0.98) !important;
-  border: 1px solid #222 !important;
-}
-
-.night-mode .music-window .window-header,
-.night-mode .window-header {
-  background: rgba(10, 10, 10, 0.95) !important;
-  border-bottom: 1px solid #222 !important;
-}
-
-/* 夜间模式下的消息操作菜单 */
-.night-mode .message-actions {
-  background: #222 !important;
-  border: 1px solid #333 !important;
-}
-
-.night-mode .message-action-btn {
-  color: #ccc !important;
-}
-
-.night-mode .message-action-btn:hover {
-  background: #444 !important;
-  color: white !important;
-}
-
-/* 夜间模式下的模态框 */
-.night-mode .modal-content {
-  background: rgba(0, 0, 0, 0.98) !important;
-  border: 1px solid #222 !important;
-}
-
-/* 夜间模式下的所有文字颜色统一 */
-.night-mode p,
-.night-mode span,
-.night-mode div:not(.message):not(.nickname):not(.chat-subtitle):not(.love-days) {
-  color: var(--text) !important;
-}
-
-/* 夜间模式下的通话按钮 */
-.night-mode .call-button,
-.night-mode .video-button {
-  background: #1a1a1a !important;
-  color: #e0e0e0 !important;
-  border-color: #333 !important;
-}
-
-.night-mode .call-button:hover,
-.night-mode .video-button:hover {
-  background: #333 !important;
-  color: white !important;
-}
-
-/* 夜间模式下的滚动条 */
-.night-mode ::-webkit-scrollbar-track {
-  background: #1a1a1a !important;
-}
-
-.night-mode ::-webkit-scrollbar-thumb {
-  background: #444 !important;
-}
-
-.night-mode ::-webkit-scrollbar-thumb:hover {
-  background: #666 !important;
-}
-
-/* 夜间模式下的正在输入指示器 */
-.night-mode .typing-indicator {
-  background: #1a1a1a !important;
-}
-
-.night-mode .typing-indicator .dot {
-  background-color: #e0e0e0 !important;
-}
 </style>
 </head>
 <body>
@@ -3062,7 +2822,7 @@ input:checked + .slider:before {
       <div class="chat-subtitle" id="appSubtitle">绝对私密的一对一聊天空间</div>
     </div>
     
-    <!-- 右侧用户信息（自己）和设置按钮，新增夜间模式按钮 -->
+    <!-- 右侧用户信息（自己）和设置按钮 -->
     <div style="display: flex; align-items: center; gap: 10px;">
       <div class="user-info" id="selfUserInfo">
         <div class="avatar" id="selfAvatar">
@@ -3070,11 +2830,6 @@ input:checked + .slider:before {
         </div>
         <div class="status-text" id="selfStatusText">在线</div>
         <div class="nickname" id="selfNickname">我</div>
-      </div>
-      
-      <!-- 新增：夜间模式切换按钮 -->
-      <div class="theme-toggle" id="themeToggle">
-        <i class="material-icons">dark_mode</i>
       </div>
       
       <div class="settings-toggle" id="settingsToggle">
@@ -4542,25 +4297,6 @@ class ChatApp {
                 this.saveAllData();
             }
         });
-        
-        // 10. 新增：恢复夜间模式状态
-        const savedNightMode = localStorage.getItem('night_mode_enabled');
-        if (savedNightMode === 'true') {
-            document.documentElement.classList.add('night-mode');
-            const themeToggle = document.getElementById('themeToggle');
-            if (themeToggle) {
-                const icon = themeToggle.querySelector('i');
-                if (icon) {
-                    icon.textContent = 'light_mode';
-                }
-            }
-            document.body.style.backgroundColor = '#0a0a0a';
-            document.documentElement.style.backgroundColor = '#0a0a0a';
-            const bgContainer = document.getElementById('backgroundContainer');
-            if (bgContainer && bgContainer.style.backgroundImage) {
-                bgContainer.style.filter = 'brightness(0.15) contrast(1.2)';
-            }
-        }
     }
     
     /**
@@ -7317,37 +7053,6 @@ body { font-family: Arial, sans-serif; margin: 20px; line-height: 1.6; }
         const settingsToggle = document.getElementById('settingsToggle');
         if (settingsToggle) {
             settingsToggle.addEventListener('click', () => this.openSettings());
-        }
-        
-        // 新增：夜间模式切换
-        const themeToggle = document.getElementById('themeToggle');
-        if (themeToggle) {
-            themeToggle.addEventListener('click', () => {
-                document.documentElement.classList.toggle('night-mode');
-                const icon = themeToggle.querySelector('i');
-                if (icon) {
-                    icon.textContent = document.documentElement.classList.contains('night-mode') ? 'light_mode' : 'dark_mode';
-                }
-                
-                const isNightMode = document.documentElement.classList.contains('night-mode');
-                localStorage.setItem('night_mode_enabled', isNightMode ? 'true' : 'false');
-                
-                if (isNightMode) {
-                    document.body.style.backgroundColor = '#0a0a0a';
-                    document.documentElement.style.backgroundColor = '#0a0a0a';
-                    const bgContainer = document.getElementById('backgroundContainer');
-                    if (bgContainer && bgContainer.style.backgroundImage) {
-                        bgContainer.style.filter = 'brightness(0.15) contrast(1.2)';
-                    }
-                } else {
-                    document.body.style.backgroundColor = '';
-                    document.documentElement.style.backgroundColor = '';
-                    const bgContainer = document.getElementById('backgroundContainer');
-                    if (bgContainer) {
-                        bgContainer.style.filter = '';
-                    }
-                }
-            });
         }
         
         const overlay = document.getElementById('settingsOverlay');
